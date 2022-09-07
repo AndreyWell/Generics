@@ -20,6 +20,8 @@ public class Main {
 
         magicBox1.add(1);
 
+        System.out.println("Случайное значение: " + magicBox1.pick());
+
         System.out.println(Arrays.toString(magicBox1.getItems()));
 
     }
