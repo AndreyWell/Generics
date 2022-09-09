@@ -4,11 +4,13 @@ public class MagicBox<T> {
 
     private int maxItem;
     private T[] items;
-    int count;
+    private int count;
+    private Random random;
 
     public MagicBox(int maxItem) {
         this.maxItem = maxItem;
         this.items = (T[]) new Object[maxItem];
+        this.random = new Random();
     }
 
     public boolean add(T item) {
@@ -23,16 +25,15 @@ public class MagicBox<T> {
         return false;
     }
 
-    public T pick() throws Exception {
+    public T pick() throws RuntimeException {
         for (int i = 0; i < items.length; i++) {
             if (items[i] != null) {
                 count++;
                 continue;
             };
-            throw new Exception("Коробка не полная, осталось мест: "
+            throw new RuntimeException("Коробка не полная, осталось мест: "
                     + (items.length - count));
         }
-        Random random = new Random();
         int randomInt = random.nextInt(items.length);
         return items[randomInt];
 

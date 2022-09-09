@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 public class Main {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws RuntimeException {
         MagicBox<String> magicBox = new MagicBox<>(5);
 
         magicBox.add("A");
@@ -20,9 +20,9 @@ public class Main {
 
         magicBox1.add(1);
 
-        System.out.println("Случайное значение: " + magicBox1.pick());
-
         System.out.println(Arrays.toString(magicBox1.getItems()));
+
+        System.out.println("Случайное значение: " + magicBox1.pick());
 
     }
 }
